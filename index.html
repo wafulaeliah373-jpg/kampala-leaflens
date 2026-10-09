@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b2d">
+  <meta name="description" content="A private, local-AI plant spotting companion for curious walks in Kampala.">
+  <title>LeafLens — take a closer look</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="quest.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">L</span> leaflens</a><span class="privacy"><i></i> AI runs on your device</span></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span>FIELD NOTES · KAMPALA</span><span class="line"></span><span>01 / 01</span></div>
+      <h1>Take a closer<br>look <em>outside.</em></h1>
+      <p class="intro">A little curiosity can turn an ordinary walk into a discovery. Snap a leaf and let open AI suggest what you found.</p>
+    </section>
+
+    <section class="workspace" aria-label="Plant identifier">
+      <div class="photo-panel" id="dropzone">
+        <div class="photo-empty" id="emptyState">
+          <div class="camera-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5 10.5h5l2-3h8l2 3h5v15H5v-15Z" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="17.5" r="5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h2>Bring a leaf into focus</h2>
+          <p>Choose a clear photo of a plant or leaf.</p>
+          <label class="upload-button" for="photoInput">Choose a photo <span>↗</span></label>
+          <span class="file-note">JPG, PNG or WEBP · stays on this device</span>
+        </div>
+        <img id="preview" alt="Your plant photo" hidden>
+        <button class="change-photo" id="changePhoto" hidden>Change photo</button>
+        <input id="photoInput" type="file" accept="image/*" capture="environment" hidden>
+      </div>
+
+      <aside class="results-panel">
+        <div class="panel-heading"><span>YOUR FIELD NOTE</span><span class="status-dot" id="statusDot"></span></div>
+        <div id="welcomeResult" class="welcome-result"><div class="sun-icon">✳</div><h2>Wonder starts<br>with a walk.</h2><p>Your identification will appear here. The model runs locally in your browser.</p><div class="model-tag">OPEN MODEL <span>·</span> PRIVATE BY DESIGN</div></div>
+        <div id="loadingResult" class="loading-result" hidden><div class="loader"></div><h2 id="loadingTitle">Warming up the model…</h2><p id="loadingMessage">The open-weight model is loading into your browser. The first load may take a little while.</p></div>
+        <div id="answerResult" hidden></div>
+        <div class="result-foot"><span>NOT SURE? ASK A LOCAL GARDENER.</span><span>✳</span></div>
+      </aside>
+    </section>
+
+    <section class="below"><div><span class="small-label">HOW IT WORKS</span><p>Upload a photo, get an AI guess, then head out and see what else you notice.</p></div><div class="steps"><span><b>01</b> Choose a photo</span><span><b>02</b> Get a suggestion</span><span><b>03</b> Go explore</span></div></section>
+    <footer><span>MADE FOR SLOW WALKS & BIG CURIOSITY</span><span>LEAF LENS · OPEN SOURCE AI</span></footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
